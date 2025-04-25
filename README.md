@@ -1,7 +1,7 @@
-📘 SL-3 Bookstore App
+#📘 SL-3 Bookstore App
 A Django-based online bookstore with a fully custom admin panel. Users can browse, search, and order books, while administrators manage users, books, and orders from a custom-built dashboard — no use of Django's built-in admin interface.
 
-🚀 Project Overview
+#🚀 Project Overview
 This application provides:
 
 User registration and login
@@ -18,7 +18,7 @@ Viewing and updating orders
 
 Dockerized setup for consistent development and deployment environments
 
-🛠️ Tech Stack
+#🛠️ Tech Stack
 Backend: Django 4+
 
 Frontend: HTML, CSS, Bootstrap (custom templates)
@@ -29,12 +29,12 @@ Containerization: Docker
 
 CI/CD Ready: Jenkins support (optional)
 
-📦 Requirements
+#📦 Requirements
 Docker installed on your machine
 
 Git for version control
 
-⚙️ Setup & Run (Docker Only)
+#⚙️ Setup & Run (Docker Only)
 1. Clone the Repository
 bash
 Copy
@@ -50,14 +50,14 @@ docker run -p 8000:8000 sl3-bookstore
 App will be available at:
 👉 http://localhost:8000
 
-🧑‍💼 Custom Admin Panel
+#🧑‍💼 Custom Admin Panel
 URL: http://localhost:8000/admin-panel/
 
 Accessible only by users with admin/staff roles
 
 Built entirely with Django templates and views (no use of django.contrib.admin)
 
-🔐 Creating an Admin User
+#🔐 Creating an Admin User
 Run this inside the container or locally:
 
 bash
@@ -71,12 +71,12 @@ Copy
 Edit
 docker exec -it <container_id> python manage.py shell
 >>> exec(open('init_admin.py').read())
-🧪 Jenkins (CI/CD) (If Configured)
+#🧪 Jenkins (CI/CD) (If Configured)
 Add a Jenkinsfile to the root to define pipeline stages
 
 Recommend stages: Lint, Test, Build Docker Image, Deploy
 
-📸 Screenshots
+#📸 Screenshots
 ![Screenshot 2025-04-24 202430](https://github.com/user-attachments/assets/4f1a5c28-8e96-4987-8692-4437f3808b0c)
 ![Screenshot 2025-04-24 202448](https://github.com/user-attachments/assets/2f6e1b5b-63a0-4494-aa1c-6f89ad17e6ba)
 ![Screenshot 2025-04-24 202503](https://github.com/user-attachments/assets/2b3f2f4c-c477-43c4-bd6a-c299553c3435)
