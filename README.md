@@ -1,82 +1,112 @@
-#📘 SL-3 Bookstore App
+# 📘 SL-3 Bookstore App
+
 A Django-based online bookstore with a fully custom admin panel. Users can browse, search, and order books, while administrators manage users, books, and orders from a custom-built dashboard — no use of Django's built-in admin interface.
 
-#🚀 Project Overview
+---
+
+## 🚀 Project Overview
+
 This application provides:
 
-User registration and login
+- User registration and login  
+- Shopping cart and order placement  
+- **Custom admin dashboard** for:
+  - Managing books  
+  - Handling user roles  
+  - Viewing and updating orders  
+- Dockerized setup for consistent development and deployment environments
 
-Shopping cart and order placement
+---
 
-Custom admin dashboard for:
+## 🛠️ Tech Stack
 
-Managing books
+- **Backend:** Django 4+  
+- **Frontend:** HTML, CSS, Bootstrap (custom templates)  
+- **Database:** SQLite (can switch to Postgres)  
+- **Containerization:** Docker  
+- **CI/CD:** Jenkins-ready (optional)
 
-Handling user roles
+---
 
-Viewing and updating orders
+## 📦 Requirements
 
-Dockerized setup for consistent development and deployment environments
+- Docker installed on your machine  
+- Git for version control  
 
-#🛠️ Tech Stack
-Backend: Django 4+
+---
 
-Frontend: HTML, CSS, Bootstrap (custom templates)
+## ⚙️ Setup & Run (Docker Only)
 
-Database: SQLite (can switch to Postgres)
+### 1. Clone the Repository
 
-Containerization: Docker
-
-CI/CD Ready: Jenkins support (optional)
-
-#📦 Requirements
-Docker installed on your machine
-
-Git for version control
-
-#⚙️ Setup & Run (Docker Only)
-1. Clone the Repository
 bash
-Copy
-Edit
 git clone https://github.com/MIHIRGHUMRE/SL-3-Bookstore.git
 cd SL-3-Bookstore
-2. Build and Run with Docker
+
+
+### 2. Build and Run with Docker
+
 bash
-Copy
-Edit
 docker build -t sl3-bookstore .
 docker run -p 8000:8000 sl3-bookstore
-App will be available at:
+
+- App will be available at:
 👉 http://localhost:8000
 
-#🧑‍💼 Custom Admin Panel
-URL: http://localhost:8000/admin-panel/
+---
 
-Accessible only by users with admin/staff roles
+## 🧑‍💼 Custom Admin Panel
 
-Built entirely with Django templates and views (no use of django.contrib.admin)
+- URL: http://localhost:8000/admin-panel/
 
-#🔐 Creating an Admin User
-Run this inside the container or locally:
+- Accessible only by users with admin/staff roles
 
-bash
-Copy
-Edit
-docker exec -it <container_id> python manage.py createsuperuser
-Or pre-load via:
+- Built entirely with Django templates and views
 
-bash
-Copy
-Edit
-docker exec -it <container_id> python manage.py shell
->>> exec(open('init_admin.py').read())
-#🧪 Jenkins (CI/CD) (If Configured)
-Add a Jenkinsfile to the root to define pipeline stages
+- Django Admin is NOT used
 
-Recommend stages: Lint, Test, Build Docker Image, Deploy
+---
 
-#📸 Screenshots
+## 🔐 Creating an Admin User
+
+### Run this inside the container:
+
+- bash
+- docker exec -it <container_id> python manage.py createsuperuser
+
+### Or pre-load using:
+
+- bash
+- docker exec -it <container_id> python manage.py shell
+- >>> exec(open('init_admin.py').read())
+
+---
+
+## 🐳 Docker Notes
+- Dockerfile: builds the Django web app
+
+- docker-compose.yml: defines the web service and database
+
+- Uses volume mounts for live code reloads
+
+- Accessible at: http://localhost:8000
+
+---
+
+## 🧪 Jenkins (CI/CD)
+If Jenkins is configured:
+
+- Add a Jenkinsfile to the root directory
+
+- Suggested pipeline stages:
+  - Lint
+  - Test
+  - Build Docker Image
+  - Deploy
+
+---
+
+## 📸 Screenshots
 ![Screenshot 2025-04-24 202430](https://github.com/user-attachments/assets/4f1a5c28-8e96-4987-8692-4437f3808b0c)
 ![Screenshot 2025-04-24 202448](https://github.com/user-attachments/assets/2f6e1b5b-63a0-4494-aa1c-6f89ad17e6ba)
 ![Screenshot 2025-04-24 202503](https://github.com/user-attachments/assets/2b3f2f4c-c477-43c4-bd6a-c299553c3435)
